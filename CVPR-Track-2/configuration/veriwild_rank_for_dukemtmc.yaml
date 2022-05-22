@@ -1,0 +1,45 @@
+arch_network_cfg:
+  arch_embedder_cfg:
+    bidirectional: false
+    depth_emb_dim: 20
+    depth_mlp_cfg: null
+    head_num_mlp_cfg:
+      dim_in: 1
+      dim_out: 100
+      hiddens:
+      - 200
+      - 200
+      - 200
+    mlp_ratio_mlp_cfg:
+      dim_in: 1
+      dim_out: 200
+      hiddens:
+      - 200
+      - 200
+      - 200
+    num_hid: 200
+    num_layers: 5
+    total_depth_emb_dim: 100
+  arch_embedder_type: vit-lstm-separate
+  compare_loss_type: margin_linear
+  compare_margin: 0.01
+  mlp_dropout: 0.0
+  mlp_hiddens:
+  - 500
+  - 500
+  - 500
+  - 500
+  - 500
+  optimizer:
+    lr: 0.001
+    type: Adam
+  scheduler: null
+arch_network_type: pointwise_comparator
+batch_size: 512
+choose_pair_criterion: random
+compare: true
+compare_threshold: 0
+epochs: 2  #500
+max_compare_ratio: 4.0
+specific_task: veriwild_rank
+train_ratio: 1.0

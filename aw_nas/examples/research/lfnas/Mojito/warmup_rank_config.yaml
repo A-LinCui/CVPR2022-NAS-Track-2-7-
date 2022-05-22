@@ -1,0 +1,28 @@
+arch_network_cfg:
+  arch_embedder_cfg:
+    emb_hid: 100
+    num_hid: 100
+    num_layers: 1
+    use_hid: true
+  arch_embedder_type: mojito-lstm
+  compare_loss_type: margin_linear
+  compare_margin: 0.1
+  mlp_dropout: 0.1
+  mlp_hiddens: []
+  optimizer:
+    lr: 0.001
+    type: Adam
+  scheduler: null
+arch_network_type: pointwise_comparator
+batch_size: 512
+choose_pair_criterion: random
+compare: true
+compare_threshold: 0.0
+epochs: 200
+finetune_epochs: 200
+finetune_only_mlp: false
+low_fidelity_normalize: false
+low_fidelity_type: param
+max_compare_ratio: 4.0
+pretrain_ratio: 1.0
+train_ratio: 1.0

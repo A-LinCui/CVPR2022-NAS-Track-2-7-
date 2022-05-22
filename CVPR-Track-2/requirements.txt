@@ -1,0 +1,8 @@
+torch
+torchvision
+extorch
+numpy
+scipy
+vit-pytorch
+seaborn
+# aw_nas
