@@ -34,3 +34,5 @@ Download the folder and run ``python reproduce_from_ckpt.py --train-dir checkpoi
 
 ### 模型优化
 使用 [GATES](https://arxiv.org/abs/2004.01899)提出的排序损失函数对模型进行优化。
+
+此外，实验发现，对于dukemtmc，从在veriwild任务上训练好的模型进行微调，可以获得更好的性能。
