@@ -19,3 +19,5 @@ For Veri\_rank, we are sorry that we forgot to save the concrete hyper-parameter
 
 ## Pretrain Model Path
 https://cloud.tsinghua.edu.cn/d/61c9d918ef114d0bb625/
+
+Download the folder and run ``python reproduce_from_ckpt.py --train-dir checkpoint`` to reproduce the results from the checkpoints.
