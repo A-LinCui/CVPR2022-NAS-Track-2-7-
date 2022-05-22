@@ -13,9 +13,9 @@ Run ``python main.py configuration --split-num <SPLIT_NUM> --seed <SEED> --train
 The result submission file will be saved as ``TRAIN_DIR/CVPR_2022_NAS_Track2_submit_A.json``. 
 
 ## Notation
-We set ``<SPLIT_NUM>=7, <SEED>=100`` for all tasks except Veri\_rank in our experiments.
+We set ``<SPLIT_NUM>=7, <SEED>=100`` for all tasks except Veri\_rank and market1501\_rank in our experiments.
 
-For Veri\_rank, we are sorry that we forgot to save the concrete hyper-parameters. Therefore, the result on Veri\_rank would be slightly different from the original submission result.
+For Veri\_rank and market1501\_rank, we are sorry that we forgot to save the concrete hyper-parameters. Therefore, the result on them would be slightly different from the original submission result.
 
 ## Pretrain Model Path
 https://cloud.tsinghua.edu.cn/d/61c9d918ef114d0bb625/
