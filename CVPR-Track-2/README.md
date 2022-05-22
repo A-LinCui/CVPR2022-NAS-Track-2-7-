@@ -1,20 +1,21 @@
 # CVPR-Track-2
 
 ## Installation
-- Install ``aw\_nas`` following ``./aw_nas/README.md``
+- Install ``aw_nas`` following ``../aw_nas/README.md``
 - Run ``pip install -r requirements.txt``
-- Run 
+- Run ``mkdir ~/awnas/plugins`` and ``ln -s `readlink -f ../CVPR-Track-2` ~/awnas/plugins``.
 
 ## Reproduction
-Run ``main.py configuration --split-num <SPLIT_NUM> --seed <SEED> --train-dir <TRAIN_DIR> --save-every 200``. 
+Save ``CVPR_2022_NAS_Track2_train.json`` and ``CVPR_2022_NAS_Track2_test.json`` at ``./data``.
+
+Run ``python main.py configuration --split-num <SPLIT_NUM> --seed <SEED> --train-dir <TRAIN_DIR>`` to reproduce the experiment.
 
 The result submission file will be saved as ``TRAIN_DIR/CVPR_2022_NAS_Track2_submit_A.json``. 
 
 ## Notation
-In our experiments, we set ``<SPLIT_NUM>=7, <SEED>=100``.
+We set ``<SPLIT_NUM>=7, <SEED>=100`` for all tasks except Veri\_rank in our experiments.
 
-Unfortunately, as we fail to save the concrete hyper-parameter settings on Veri\_rank. Thus, the result on Veri\_rank will be slightly different than the origin submission.
-
+For Veri\_rank, we are sorry that we forgot to save the concrete hyper-parameters. Therefore, the result on Veri\_rank would be slightly different from the original submission result.
 
 ## Pretrain Model Path
 https://cloud.tsinghua.edu.cn/d/61c9d918ef114d0bb625/
