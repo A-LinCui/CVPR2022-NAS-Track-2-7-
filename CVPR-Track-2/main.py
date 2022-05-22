@@ -53,9 +53,8 @@ if __name__ == "__main__":
         "msmt17_rank", # individual
         "sop_rank",  # individual
         "vehicleid_rank", # individual
-        "msmt17_rank_for_market1501",
         "veriwild_rank_for_dukemtmc",
-        "market1501_rank", # distill from msmt
+        "market1501_rank", # individual
         "dukemtmc_rank",  # finetune from veriwild
         "veri_rank" # individual
     ]
@@ -128,7 +127,7 @@ if __name__ == "__main__":
         for j in range(args.split_num):
             final_path = os.path.join(task_path, "{}".format(j))
 
-            if task in ["cplfw_rank", "veriwild_rank", "msmt17_rank", "sop_rank", "vehicleid_rank", "veriwild_rank_for_dukemtmc", "msmt17_rank_for_market1501", "veri_rank"]:
+            if task in ["cplfw_rank", "veriwild_rank", "msmt17_rank", "sop_rank", "vehicleid_rank", "veriwild_rank_for_dukemtmc", "market1501_rank", "veri_rank"]:
                 command = "python {} {} --gpu {} --num-workers {} --report_freq {} --seed {} --train-dir {} --train-data {} --valid-data {} --test-data {}".format(
                         os.path.join(default_parent_dir, "train_individual.py"), 
                         cfg_file, 
@@ -140,22 +139,6 @@ if __name__ == "__main__":
                         train_data_path_lst[j], 
                         valid_data_path_lst[j],
                         args.test_data
-                )
-
-            elif task in ["market1501_rank"]:
-                command = "python {} {} --gpu {} --num-workers {} --report_freq {} --seed {} --train-dir {} --train-data {} --valid-data {} --test-data {} --teacher-path {} --split-num {}".format(
-                        os.path.join(default_parent_dir, "train_distillation.py"), 
-                        cfg_file, 
-                        args.gpu, 
-                        args.num_workers, 
-                        args.report_freq, 
-                        args.seed + j, 
-                        final_path, 
-                        train_data_path_lst[j], 
-                        valid_data_path_lst[j],
-                        args.test_data,
-                        os.path.join(args.train_dir, "msmt17_rank_for_market1501"),
-                        args.split_num
                 )
             
             elif task in ["dukemtmc_rank"]:
@@ -177,7 +160,6 @@ if __name__ == "__main__":
 
     failed_commands = run_processes(commands)
 
-    task_names.remove("msmt17_rank_for_market1501")
     task_names.remove("veriwild_rank_for_dukemtmc")
 
     if len(failed_commands) > 0:
